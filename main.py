@@ -1,6 +1,7 @@
 import webapp2
 import os
 import jinja2
+from google.appengine.ext import ndb
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
