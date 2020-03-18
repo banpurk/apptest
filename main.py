@@ -22,10 +22,10 @@ html = """
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
-        self.response.out.right(html)
+        self.response.out.write(html)
     
   def post(self):
-        self.response.out.right("Compliance selected: " + compliance + "Workload selected: " + workload)
+        self.response.out.write("Compliance selected: " + compliance + "Workload selected: " + workload)
     
 app = webapp2.WSGIApplication([('/', MainPage)], debug= True)
   
