@@ -3,7 +3,8 @@
   <meta name="google-signin-client_id" content="713762281842-6dqnblvcc5b61f2dbihqnbsln87aq5ts.apps.googleusercontent.com">
 </head>
 <body>
-  <div id="my-signin2"></div>
+  <div 
+       class="g-signin2" data-width="300" data-height="200" data-longtitle="true" id="my-signin2"></div>
   <script>
     function onSuccess(googleUser) {
       console.log('Logged in as' + googleUser.getBasicProfile().getName());
@@ -13,8 +14,6 @@
       console.log(error);
 }
     function renderButton() {
-      position: absolute;
-      top: 50%;
       gapi.signin2.render('my-signin2', {
         'scope': 'profile email',
         'width': 240,
