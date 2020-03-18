@@ -1,4 +1,6 @@
 import webapp2
+import os
+import jinja2
 
 html = """
 <!doctype html>
@@ -27,7 +29,7 @@ class MainPage(webapp2.RequestHandler):
   def post(self):
         Compliance = self.request.get("Compliance")
         Workload = self.request.get("Workload")
-        self.response.out.write("Compliance selected: " + Compliance + "Workload selected: " + Workload)
+        self.response.out.write("Compliance selected: " + Compliance + " Workload selected: " + Workload)
     
 app = webapp2.WSGIApplication([('/', MainPage)], debug= True)
   
