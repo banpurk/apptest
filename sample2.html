@@ -1,13 +1,11 @@
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-signin-client_id" content="713762281842-6dqnblvcc5b61f2dbihqnbsln87aq5ts.apps.googleusercontent.com">
 </head>
 <body>
-  <div class="wrapper" id="my-signin2"></div>
-  
-  .wrapper {
-    text-align: center;
-}
+  <div id="my-signin2"></div>
+ 
   <script>
     function onSuccess(googleUser) {
       console.log('Logged in as' + googleUser.getBasicProfile().getName());
