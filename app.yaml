@@ -4,7 +4,7 @@ libraries:
 - name: jinja2
   version: latest
   
-runtime: php73
+runtime: python27
 
 handlers:
 - url: /home
