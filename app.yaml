@@ -18,4 +18,4 @@ handlers:
   upload: sample2.html
   
 - url: /datastore
-  script: Datastore.app
+  script: dshandler.app
