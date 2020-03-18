@@ -4,7 +4,13 @@ import jinja2
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
-        self.response.out.write(html)
+        template_values = {
+            'Compliance': Compliance,
+            'Workload': Workload,
+        }
+      
+        template = JINJA_ENVIRONMENT.get_template('index.html')
+        self.response.write(template.render(template_values))
     
   def post(self):
         Compliance = self.request.get("Compliance")
