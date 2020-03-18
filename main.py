@@ -7,6 +7,13 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+DEFAULT_KEY_NAME = 'default_key'
+
+def ds_key(key_name=DEFAULT_KEY_NAME):
+    """Constructs a Datastore key
+    """
+    return ndb.Key('Datainput', key_name)
+
 class Entry(ndb.Model):
     """A main model for representing an individual Guestbook entry."""
     compliance= ndb.StringProperty(indexed=False)
@@ -25,9 +32,12 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
     
   def post(self):
-        Entry.compliance = self.request.get("Compliance")
-        Entry.workload = self.request.get("Workload")
-        Entry.put()
+        key_name = self.request.get("Compliance")
+        entry = Entry(parent=ds_key(key_name))
+        
+        entry.compliance = self.request.get("Compliance")
+        entry.workload = self.request.get("Workload")
+        entry.put()
         print("Input added to Datastore")
     
 app = webapp2.WSGIApplication([('/', MainPage)], debug= True)
