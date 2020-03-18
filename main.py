@@ -16,10 +16,11 @@ class Entry(ndb.Model):
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
-            
+        user = users.get_current_user()
         Compliance = self.request.get("Compliance")
         Workload = self.request.get("Workload")
         template_values = {
+            'user': user
             'Compliance': Compliance,
             'Workload': Workload,
         }
