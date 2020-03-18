@@ -17,5 +17,5 @@ handlers:
   static_files: sample2.html
   upload: sample2.html
   
-- url: /.*
+- url: /home
   script: main.app
