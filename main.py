@@ -9,6 +9,8 @@ JINJA_ENVIRONMENT = jinja2.Environment(
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
+        Compliance = self.request.get("Compliance")
+        Workload = self.request.get("Workload")
         template_values = {
             'Compliance': Compliance,
             'Workload': Workload,
@@ -18,8 +20,6 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
     
   def post(self):
-        Compliance = self.request.get("Compliance")
-        Workload = self.request.get("Workload")
         self.response.out.write("Compliance selected: " + Compliance + " Workload selected: " + Workload)
     
 app = webapp2.WSGIApplication([('/', MainPage)], debug= True)
