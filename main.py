@@ -16,11 +16,17 @@ class Entry(ndb.Model):
 
 class MainPage(webapp2.RequestHandler):
   def get(self):
+        user = users.get_current_user()
+        url = users.create_login_url(self.request.uri)
+        url_linktext = 'Login'
+            
         Compliance = self.request.get("Compliance")
         Workload = self.request.get("Workload")
         template_values = {
             'Compliance': Compliance,
             'Workload': Workload,
+            'url': url,
+            'url_linktext': url_linktext,
         }
       
         template = JINJA_ENVIRONMENT.get_template('index.html')
