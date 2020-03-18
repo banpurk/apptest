@@ -16,6 +16,11 @@ class compwork(ndb.Model):
     compliance = msgprop.EnumProperty(Compliance, required=True)
     workload = msgprop.EnumProperty(Workload, required=True)
     
+class Greeting(ndb.Model):
+    """A main model for representing an individual Guestbook entry."""
+    content = ndb.IntegerProperty(indexed=False)
+    date = ndb.DateTimeProperty(auto_now_add=True)
+    
 #class Datastore(webapp2.RequestHandler):
     
  @app.route('/datastore', methods=['POST'])
