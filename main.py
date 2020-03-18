@@ -7,6 +7,11 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+class Entry(ndb.Model):
+    """A main model for representing an individual Guestbook entry."""
+    compliance= ndb.StringProperty(indexed=False)
+    workload = ndb.StringProperty(indexed=False)
+
 class MainPage(webapp2.RequestHandler):
   def get(self):
         Compliance = self.request.get("Compliance")
@@ -20,9 +25,10 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
     
   def post(self):
-        Compliance = self.request.get("Compliance")
-        Workload = self.request.get("Workload")
-        self.response.out.write("Compliance selected: " + Compliance + " Workload selected: " + Workload)
+        Entry.compliance = self.request.get("Compliance")
+        Entry.workload = self.request.get("Workload")
+        Entry.put()
+        print("Input added to Datastore")
     
 app = webapp2.WSGIApplication([('/', MainPage)], debug= True)
   
