@@ -14,8 +14,27 @@ class Entry(ndb.Model):
     compliance= ndb.StringProperty(indexed=False)
     workload = ndb.StringProperty(indexed=False)
 
-class MainPage(webapp2.RequestHandler):
+class Login(webapp2.RequestHandler):
   def get(self):
+        user = users.get_current_user()
+        if user:
+            url = users.create_logout_url(self.request.uri)
+            url_linktext = 'Logout'
+        else:
+            url = users.create_login_url(self.request.uri)
+            url_linktext = 'Login'
+
+        template_values = {
+            'user': user,
+            'url': url,
+            'url_linktext': url_linktext,
+        }
+      
+        template = JINJA_ENVIRONMENT.get_template('sample2.html')
+        self.response.write(template.render(template_values))
+        
+class MainPage(webapp2.RequestHandler):
+   def get(self):
         user = users.get_current_user()
         Compliance = self.request.get("Compliance")
         Workload = self.request.get("Workload")
@@ -28,12 +47,13 @@ class MainPage(webapp2.RequestHandler):
         template = JINJA_ENVIRONMENT.get_template('index.html')
         self.response.write(template.render(template_values))
     
-  def post(self):
+   def post(self):
         entry = Entry()
         entry.compliance = self.request.get("Compliance")
         entry.workload = self.request.get("Workload")
         entry.put()
         print('Success')
     
-app = webapp2.WSGIApplication([('/', MainPage)], debug= True)
+app = webapp2.WSGIApplication([('/', Login), 
+                               ('/home', MainPage)], debug= True)
   
