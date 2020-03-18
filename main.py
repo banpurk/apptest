@@ -14,7 +14,7 @@ html = """
                         <label for= "Workload">Workoad:</label>
                         <input name="Workload" type="text" value=""><br>
                 
-                        <input name="" type="submit" value="">
+                        <input name="" type="submit" value="Submit">
                 </form>
         </body>
 </html>
@@ -25,7 +25,7 @@ class MainPage(webapp2.RequestHandler):
         self.response.out.write(html)
     
   def post(self):
-        self.response.out.write("Compliance selected: " + compliance + "Workload selected: " + workload)
+        self.response.out.write("Compliance selected: " + Compliance + "Workload selected: " + Workload)
     
 app = webapp2.WSGIApplication([('/', MainPage)], debug= True)
   
