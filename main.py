@@ -1,21 +1,21 @@
 import webapp2
 
 html = """
+<!doctype html>
 <html>
         <head>
                 This is a form to pick compliance and workload 
-
         </head>
-                <body>
-        <form method="post">
-                <label for= "Compliance">Compliance:</label>
-                <input name="Compliance" type="text" value=""><br>
+        <body>
+                <form method="post">
+                        <label for= "Compliance">Compliance:</label>
+                        <input name="Compliance" type="text" value=""><br>
                 
-                <label for= "Workload">Workoad:</label>
-                <input name="Workload" type="text" value=""><br>
+                        <label for= "Workload">Workoad:</label>
+                        <input name="Workload" type="text" value=""><br>
                 
-                <input name="" type="submit" value="">
-        </form>
+                        <input name="" type="submit" value="">
+                </form>
         </body>
 </html>
 """
