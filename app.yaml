@@ -2,8 +2,8 @@ runtime: php73
 
 handlers:
 - url: /home
-  static_files: form.html
-  upload: form.html
+  static_files: form02.html
+  upload: form02.html
 
 - url: /
   static_files: sample2.html
