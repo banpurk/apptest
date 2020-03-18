@@ -3,8 +3,11 @@
   <meta name="google-signin-client_id" content="713762281842-6dqnblvcc5b61f2dbihqnbsln87aq5ts.apps.googleusercontent.com">
 </head>
 <body>
-  <div 
-       class="g-signin2" data-width="300" data-height="200" data-longtitle="true" id="my-signin2"></div>
+  <div class="wrapper" id="my-signin2"></div>
+  
+  .wrapper {
+    text-align: center;
+}
   <script>
     function onSuccess(googleUser) {
       console.log('Logged in as' + googleUser.getBasicProfile().getName());
