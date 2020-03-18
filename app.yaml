@@ -9,6 +9,9 @@ handlers:
   static_files: sample2.html
   upload: sample2.html
   
+- url: /datastore
+  script: Datastore.app
+  
 libraries:
 - name: webapp2
   version: latest
