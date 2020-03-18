@@ -14,6 +14,8 @@
       console.log(error);
 }
     function renderButton() {
+      position: absolute;
+      top: 50%;
       gapi.signin2.render('my-signin2', {
         'scope': 'profile email',
         'width': 240,
