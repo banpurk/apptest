@@ -13,9 +13,8 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
   
-- url: /
-  static_files: sample2.html
-  upload: sample2.html
+- url: /bootstrap
+  static_dir: bootstrap
   
-- url: /home
+- url: /.*
   script: main.app
