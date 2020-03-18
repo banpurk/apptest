@@ -1,0 +1,10 @@
+runtime: php73
+
+handlers:
+- url: /home
+  static_files: form.html
+  upload: form.html
+
+- url: /
+  static_files: sample2.html
+  upload: sample2.html
