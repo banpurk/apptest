@@ -32,7 +32,8 @@ class MainPage(webapp2.RequestHandler):
         self.response.write(template.render(template_values))
     
   def post(self):
-        key_name = self.request.get("Compliance")
+        key_name = self.request.get('key_name',
+                                          DEFAULT_KEY_NAME)
         entry = Entry(parent=ds_key(key_name))
         
         entry.compliance = self.request.get("Compliance")
