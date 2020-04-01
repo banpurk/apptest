@@ -1,0 +1,47 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: sans-serif;
+	
+}
+#nav-bar
+{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+.navbar
+{
+	background-image: linear-gradient(to right, #ffffff, #43b02a);
+	padding-left: 2%;
+}
+.nav-link
+{
+	color: #ffffff;
+}
+
+#banner
+{
+	padding-top: 5%;
+}
+.promo-title
+{
+	color: #000000;
+	font-size: 40px;
+	font-weight: 400;
+	margin-top: 20px;
+}
+.col-md-6
+{
+	margin-top: 60px;
+}
+
+
+
+
+
+
+
