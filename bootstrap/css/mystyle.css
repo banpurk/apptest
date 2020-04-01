@@ -38,7 +38,13 @@ body
 {
 	margin-top: 60px;
 }
-
+.feature-title
+{
+	color: #000000;
+	font-size: 40px;
+	font-weight: 400;
+	margin-top: 20px;
+}
 
 
 
