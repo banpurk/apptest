@@ -43,7 +43,7 @@ class MainPage(webapp2.RequestHandler):
             'Workload': Workload,
         }
       
-        template = JINJA_ENVIRONMENT.get_template('index.html')
+        template = JINJA_ENVIRONMENT.get_template('new.html')
         self.response.write(template.render(template_values))
     
    def post(self):
