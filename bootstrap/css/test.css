@@ -16,7 +16,21 @@
 *:after {
   box-sizing: inherit;
 }
-
+#nav-bar
+{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+.navbar
+{
+	background-image: linear-gradient(to right, #ffffff, #43b02a);
+	padding-left: 2%;
+}
+.nav-link
+{
+	color: #ffffff;
+}
 .error {
     color: red;
 }
