@@ -41,9 +41,13 @@ body
 .feature-title
 {
 	color: #000000;
-	font-size: 40px;
+	font-size: 25px;
 	font-weight: 400;
 	margin-top: 20px;
+}
+.col-mod-6 text-centre2
+{
+	margin-top: 60px;
 }
 
 
