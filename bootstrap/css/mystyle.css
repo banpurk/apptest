@@ -38,7 +38,14 @@ body
 {
 	margin-top: 60px;
 }
-.feature-title
+.feature-title1
+{
+	color: #000000;
+	font-size: 25px;
+	font-weight: 400;
+	margin-top: 20px;
+}
+.feature-title2
 {
 	color: #000000;
 	font-size: 25px;
@@ -47,6 +54,8 @@ body
 }
 .col-mod-6 text-centre2
 {
+	font-size: 25px;
+	font-weight: 400;
 	margin-top: 60px;
 }
 
