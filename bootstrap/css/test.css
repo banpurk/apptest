@@ -78,7 +78,7 @@ body {
 
 .container {
 	max-width:490px;
-	width:100%;
+	width:50%;
 	margin:0 auto;
 	position:relative;
 }
@@ -136,7 +136,7 @@ fieldset {
 
 #contact button[type="submit"] {
 	cursor:pointer;
-	width:100%;
+	width:50%;
 	border:none;
 	background:#9ACD66;
 	color:#FFF;
