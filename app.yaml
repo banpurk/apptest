@@ -16,5 +16,8 @@ handlers:
 - url: /bootstrap
   static_dir: bootstrap
   
-- url: /.*
+- url: /congrats
+  script: congrats.html
+  
+- url: /home
   script: main.app
