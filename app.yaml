@@ -19,5 +19,5 @@ handlers:
 - url: /congrats
   script: congrats.html
   
-- url: /home
+- url: /.*
   script: main.app
