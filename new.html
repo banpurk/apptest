@@ -31,7 +31,7 @@
 </section>
 
 <div class="container">  
-	<form id="contact" method="post">
+	<form action="/congrats" method="get">
 		<h3>Select a compliance requirement you want to test	>></h3>
 		<div class="radio-buttons-wrapper">
 			<input name="Compliance" type="radio" class="radio-button" value="GDPR" id="GDPR" required />
@@ -50,15 +50,9 @@
 			<label for="DLP">Data Loss Prevention</label>
 		</div>
 		<fieldset>
-		  <button class="submit" onclick="submit()">Submit</button>
+		  <input type="submit" name='submit_button' value="SUBMIT">
 		</fieldset>
-		<p id="demo"></p>
 	</form>
 </div>
-<script>
-	function submit() {
-  	document.getElementById("demo").innerHTML = "Congrats! Your workload has been deployed";
-	}
-</script>
 </body>
 </html>
