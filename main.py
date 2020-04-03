@@ -53,6 +53,5 @@ class MainPage(webapp2.RequestHandler):
         entry.put()
     
 app = webapp2.WSGIApplication([('/', Login), 
-                               ('/home', MainPage)], 
-                              ('/congrats', Congrats)], debug= True)
+                               ('/home', MainPage)], debug= True)
   
