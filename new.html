@@ -50,9 +50,15 @@
 			<label for="DLP">Data Loss Prevention</label>
 		</div>
 		<fieldset>
-		  <button onclick="window.location.href='/home/congrats'">Submit</button>
+		  <button class="submit" onclick="submit()">Submit</button>
 		</fieldset>
+		<p id="demo"></p>
 	</form>
 </div>
+<script>
+	function submit() {
+  	document.getElementById("demo").innerHTML = "Congrats! Your workload has been deployed";
+	}
+</script>
 </body>
 </html>
