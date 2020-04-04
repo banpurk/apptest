@@ -54,14 +54,8 @@ class MainPage(webapp2.RequestHandler):
         
 class Congrats(webapp2.RequestHandler):
     def get(self):
-         template_values = {
-            'url': url,
-            'url_linktext': url_linktext,
-        }
-      
         template = JINJA_ENVIRONMENT.get_template('congrats.html')
-        self.response.write(template.render(template_values))
-    
+
 app = webapp2.WSGIApplication([('/', Login), 
                                ('/home', MainPage),
                                ('/congrats', Congrats)], debug= True)
