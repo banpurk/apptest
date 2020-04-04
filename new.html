@@ -56,9 +56,15 @@ form
 			<label for="DLP">Data Loss Prevention</label>
 		</div>
 		<fieldset>
-		  <button name="submit" onclick="window.location.href = 'congrats'" type="submit">Submit</button>
+		  <button name="submit" onclick="SetCongrats();" type="submit">Submit</button>
 		</fieldset>
 	</form>
 </div>
+<script>
+    function SetCongrats() {
+      console.log('Setting Congrats');
+        window.location.href = "congrats"
+}
+  </script>
 </body>
 </html>
