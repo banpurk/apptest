@@ -51,11 +51,7 @@ class MainPage(webapp2.RequestHandler):
         entry.compliance = self.request.get("Compliance")
         entry.workload = self.request.get("Workload")
         entry.put()
-        
-class Congrats(webapp2.RequestHandler):
-        template = JINJA_ENVIRONMENT.get_template('congrats.html')
     
 app = webapp2.WSGIApplication([('/', Login), 
-                               ('/home', MainPage),
-                              ('/congrats', Congrats)], debug= True)
+                               ('/home', MainPage), debug= True)
   
