@@ -21,4 +21,7 @@ handlers:
   
 - url: /
   script: main.app
+  
+- url: /home
+  script: main.app
     
