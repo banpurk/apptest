@@ -18,6 +18,7 @@ class Entry(ndb.Model):
 class Login(webapp2.RequestHandler):
   def get(self):
         user = users.get_current_user()
+     #   self.response.write(user)
         if user:
             url = users.create_logout_url(self.request.uri)
             url_linktext = 'Logout'
@@ -51,11 +52,10 @@ class MainPage(webapp2.RequestHandler):
         entry.compliance = self.request.get("Compliance")
         entry.workload = self.request.get("Workload")
         entry.put()
-      #  template_values = {'a':'HELLO'}
-        template = JINJA_ENVIRONMENT.list_templates()
-        self.response.write(template)
-      #  self.response.write(template.render())y
+        template = JINJA_ENVIRONMENT.get_template('congrats.html')
+        self.response.write(template.render())
 
 app = webapp2.WSGIApplication([('/', Login), 
                                ('/home', MainPage)], debug= True)
+               #                ('/home#',Login)
   
