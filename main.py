@@ -8,7 +8,7 @@ from google.appengine.api import users
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
-    autoescape=True)
+    autoescape=False)
 
 class Entry(ndb.Model):
     """A main model for representing an individual Guestbook entry."""
@@ -51,6 +51,10 @@ class MainPage(webapp2.RequestHandler):
         entry.compliance = self.request.get("Compliance")
         entry.workload = self.request.get("Workload")
         entry.put()
+      #  template_values = {'a':'HELLO'}
+        template = JINJA_ENVIRONMENT.list_templates()
+        self.response.write(template)
+      #  self.response.write(template.render())y
 
 app = webapp2.WSGIApplication([('/', Login), 
                                ('/home', MainPage)], debug= True)
