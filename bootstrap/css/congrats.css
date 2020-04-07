@@ -51,3 +51,35 @@ h1 {
   font-size: 30px;
   display: none;
 }
+.myButton {
+    position:fixed;
+	box-shadow:inset 0px 1px 0px 0px #a4e271;
+	background:linear-gradient(to bottom, #86BC25 5%, #0F9D58 100%);
+	background-color:#86BC25;
+	border-radius:6px;
+	border:1px solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+    text-align: center;
+    top: 55%;
+    left: 43%;
+    width: 15.5%;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #0F9D58 5%, #86BC25 100%);
+    font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+    text-align: center;
+    color:#ffffff;
+}
