@@ -10,10 +10,10 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=False)
 
-class Entry(ndb.Model):
-    """A main model for representing an individual Guestbook entry."""
-    compliance= ndb.StringProperty(indexed=False)
-    workload = ndb.StringProperty(indexed=False)
+# class Entry(ndb.Model):
+#    """A main model for representing an individual Guestbook entry."""
+#    compliance= ndb.StringProperty(indexed=False)
+#    workload = ndb.StringProperty(indexed=False)
 
 class Login(webapp2.RequestHandler):
   def get(self):
