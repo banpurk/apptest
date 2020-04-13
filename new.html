@@ -80,7 +80,7 @@ form
             pre.textContent = '\n' + JSON.stringify(inputs, '\t', 2);
 
             //saving to localStorage
-            localStorage.setItem('MyMovieList', JSON.stringify(inputs) );
+            localStorage.setItem('MyInputList', JSON.stringify(inputs) );
         }
         document.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('submit').addEventListener('click', addInput);
