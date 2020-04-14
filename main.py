@@ -57,7 +57,7 @@ class MainPage(webapp2.RequestHandler):
         storage_client = storage.Client()
         bucket = storage_client.bucket("divine-engine-270122.appspot.com")
         blob = bucket.blob("job-1")
-        blob.upload_from_string(json.dumps([self.request.get("Compliance"),self.request.get("Workload")],'application/json'))
+        blob.upload_from_string(json.dumps([self.request.get("Compliance"),self.request.get("Workload")]),'application/json')
         
         template = JINJA_ENVIRONMENT.get_template('congrats.html')
         self.response.write(template.render())
