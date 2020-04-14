@@ -4,6 +4,7 @@ import jinja2
 import urllib
 from google.appengine.ext import ndb
 from google.appengine.api import users
+from google.cloud import storage
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
