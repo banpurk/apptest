@@ -50,19 +50,19 @@ class MainPage(webapp2.RequestHandler):
     
    def post(self):
     '''
-        entry = Entry()
-        entry.compliance = self.request.get("Compliance")
-        entry.workload = self.request.get("Workload")
-        entry.put() '''
-        storage_client = storage.Client()
-        bucket = storage_client.bucket("divine-engine-270122.appspot.com")
-        blob = bucket.blob("job-1")
-        blob.upload_from_string(json.dumps([self.request.get("Compliance"),self.request.get("Workload")]),'application/json')
-        
-        template = JINJA_ENVIRONMENT.get_template('congrats.html')
-        self.response.write(template.render())
+    entry = Entry()
+    entry.compliance = self.request.get("Compliance")
+    entry.workload = self.request.get("Workload")
+    entry.put()'''
+
+    storage_client = storage.Client()
+    bucket = storage_client.bucket("divine-engine-270122.appspot.com")
+    blob = bucket.blob("job-1")
+    blob.upload_from_string(json.dumps([self.request.get("Compliance"),self.request.get("Workload")]),'application/json')
+    
+    template = JINJA_ENVIRONMENT.get_template('congrats.html')
+    self.response.write(template.render())
 
 app = webapp2.WSGIApplication([('/', Login), 
                                ('/home', MainPage)], debug= True)
                #                ('/home#',Login)
-  
