@@ -60,31 +60,5 @@ form
 		</fieldset>
 	</form>
 </div>
-<script>
-        let inputs = [];
-        // example {Compliance:'GDPR', Workload:'Data Warehouse'}
-        const addInput = (ev)=>{
-            ev.preventDefault();  //to stop the form submitting
-            let input = {
-                id: Date.now(),
-               	Compliance: document.getElementById('Compliance').value,
-                Workload: document.getElementById('Workload').value
-            }
-            inputs.push(input);
-            document.forms[0].reset(); // to clear the form for the next entries
-            //document.querySelector('form').reset();
-
-            //for display purposes only
-            console.warn('added' , {inputs} );
-            let pre = document.querySelector('#msg pre');
-            pre.textContent = '\n' + JSON.stringify(inputs, '\t', 2);
-
-            //saving to localStorage
-            localStorage.setItem('MyInputList', JSON.stringify(inputs) );
-        }
-        document.addEventListener('DOMContentLoaded', ()=>{
-            document.getElementById('submit').addEventListener('click', addInput);
-        });
-   </script>
 </body>
 </html>
