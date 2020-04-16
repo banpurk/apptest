@@ -3,8 +3,11 @@ import os
 import jinja2
 import urllib
 import json
+import cloudstorage
 from google.appengine.ext import ndb
 from google.appengine.api import users
+from google.appengine.ext import blobstore
+from google.appengine.ext.webapp import blobstore_handlers
 from google.cloud import storage
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -58,8 +61,9 @@ class MainPage(webapp2.RequestHandler):
 
     storage_client = storage.Client()
     bucket = storage_client.bucket("divine-engine-270122.appspot.com")
-    blob = bucket.blob("job-1")
-    blob.upload_from_string(json.dumps({"god": "great"}),content_type="application/json")
+#    blob = bucket.blob("job-1")
+    with cloudstorage.open("job-1", 'w') as filehandle:
+            filehandle.write(json.dumps({"god": "great"}))
     
     template = JINJA_ENVIRONMENT.get_template('congrats.html')
     self.response.write(template.render())
