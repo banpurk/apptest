@@ -62,7 +62,8 @@ class MainPage(webapp2.RequestHandler):
     storage_client = storage.Client()
     bucket = storage_client.bucket("divine-engine-270122.appspot.com")
 #    blob = bucket.blob("job-1")
-    with cloudstorage.open("job-1", 'w') as filehandle:
+    filename = '/{}/job-1'.format(bucket)
+    with cloudstorage.open(filename, 'w') as filehandle:
             filehandle.write(json.dumps({"god": "great"}))
     
     template = JINJA_ENVIRONMENT.get_template('congrats.html')
