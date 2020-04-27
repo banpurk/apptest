@@ -22,7 +22,7 @@
 			<a class="nav-link" href="#">CONTACT US</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="../">SIGN OUT</a>
+			<a class="nav-link" href="#" onclick="signOut();">SIGN OUT</a>
 		  </li>
 		</ul>
 	  </div>
@@ -37,13 +37,19 @@
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js'></script>
     <script  src="/bootstrap/css/congrats.js"></script>
-    <script>
-	    function signOut() {
-		var auth2 = gapi.auth2.getAuthInstance();
-		auth2.signOut().then(function () {
-		 console.log('User signed out.');
+    <script type='text/javascript'>
+	function signOut(){
+		gapi.load('auth2', function(){
+			gapi.auth2.init().then(function(){
+				var auth2 = gapi.auth2.getAuthInstance();
+				auth2.signOut().then(function () {
+					console.log('User signed out.');
+					document.location='/';
+				});
+			});
 		});
-    </script>
-    <script src="https://apis.google.com/js/platform.js?onload=signOut" async defer></script>
+	}	
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 </html>
