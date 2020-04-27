@@ -20,7 +20,9 @@ class Login(webapp2.RequestHandler):
         user = users.get_current_user()
      #   self.response.write(user)
         if user:
-            url = users.create_logout_url(self.request.uri)
+            self.auth.unset_session()
+            self.redirect(self.uri_for('/'))
+           # url = users.create_logout_url(self.request.uri)
             url_linktext = 'Logout'
         else:
             url = users.create_login_url(self.request.uri)
