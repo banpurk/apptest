@@ -2,8 +2,6 @@ import webapp2
 import os
 import jinja2
 import urllib
-import json
-import cloudstorage
 from google.appengine.ext import ndb
 from google.appengine.api import users
 
@@ -54,13 +52,6 @@ class MainPage(webapp2.RequestHandler):
         entry.compliance = self.request.get("Compliance")
         entry.workload = self.request.get("Workload")
         entry.put()
-        
-#        storage_client = storage.Client()
-#        bucket = storage_client.bucket("divine-engine-270122.appspot.com")
-#       blob = bucket.blob("job-1")
-#        filename = '/{}/job-1'.format(bucket)
-#        with cloudstorage.open(filename, 'w') as filehandle:
-#            filehandle.write(json.dumps({"god": "great"}))
         template = JINJA_ENVIRONMENT.get_template('congrats.html')
         self.response.write(template.render())
 
